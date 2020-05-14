@@ -1,0 +1,19 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: crmm-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/ztyhz/crmm_dev.git
+
+  rabbitmq:
+    host: 127.0.0.1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

@@ -1,0 +1,13 @@
+server:
+  port: 9009
+
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+
+aliyun:
+  sms:
+    accessKeyId: LTAI4FeNL1msEyMdtgK4Xuwn
+    accessKeySecret: OeonRbJBtLdHDLILYGXIBXIIFOhfyw
+    sign_name: 霹雳五号
+    template_code: SMS_180341789

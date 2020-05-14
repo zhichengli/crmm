@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="crmm_article" />
+        <module name="crmm_base" />
+        <module name="crmm_common" />
+        <module name="crmm_config" />
+        <module name="crmm_eureka" />
+        <module name="crmm_friend" />
+        <module name="crmm_gathering" />
+        <module name="crmm_manager" />
+        <module name="crmm_qa" />
+        <module name="crmm_rabbitmqtest" />
+        <module name="crmm_recruit" />
+        <module name="crmm_search" />
+        <module name="crmm_sms" />
+        <module name="crmm_spit" />
+        <module name="crmm_user" />
+        <module name="crmm_web" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

@@ -1,0 +1,36 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: crmm-manager
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
+
+jwt:
+  config:
+    key: zclcrmm
+
+zuul:
+  routes:
+    crmm-base:
+      path: /base/**
+      serviceId: crmm-base
+    crmm-article:
+      path: /article/**
+      serviceId: crmm-article
+    crmm-user:
+      path: /user/**
+      serviceId: crmm-user
+    crmm-qa:
+      path: /qa/**
+      serviceId: crmm-qa
+    crmm-friend:
+      path: /friend/**
+      serviceId: crmm-friend
+    crmm-spit:
+      path: /spit/**
+      serviceId: crmm-spit

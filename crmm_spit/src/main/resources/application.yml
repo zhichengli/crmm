@@ -1,0 +1,13 @@
+server:
+  port: 9006
+
+spring:
+  application:
+    name: crmm-spit
+  data:
+    mongodb:
+      host: 127.0.0.1
+      database: spitdb
+  redis:
+    host: 127.0.0.1
+
