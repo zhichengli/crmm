@@ -232,6 +232,14 @@ public class UserService {
    		userDao.updatefanscount(x,friendid);
 		userDao.updatefollowcount(x,userid);
     }
+
+	public Page<User> findAllFans(String userid,int page,int size) {
+		return userDao.findFans(userid,PageRequest.of(page-1,size));
+	}
+
+	public Page<User> findFollows(String userid, int page, int size) {
+		return userDao.findFollows(userid,PageRequest.of(page-1,size));
+	}
 }
 
 

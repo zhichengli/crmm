@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="crmm_ai" />
         <module name="crmm_article" />
+        <module name="crmm_article_crawler" />
         <module name="crmm_base" />
         <module name="crmm_common" />
         <module name="crmm_config" />

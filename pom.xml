@@ -24,6 +24,8 @@
         <module>crmm_manager</module>
         <module>crmm_web</module>
         <module>crmm_config</module>
+        <module>crmm_ai</module>
+        <module>crmm_article_crawler</module>
     </modules>
     <packaging>pom</packaging>
 

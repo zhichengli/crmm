@@ -97,6 +97,30 @@ public class UserController {
 	}
 
 
+	/**
+	 * 查询我的全部粉丝
+	 * /user/follow/myfans
+	 * 查询我的粉丝
+	 */
+	@RequestMapping(value = "/follow/myfans/{userid}/{page}/{size}",method = RequestMethod.GET)
+	public Result findFans(@PathVariable String userid,@PathVariable int page,@PathVariable int size){
+		Page<User> allFans = userService.findAllFans(userid, page, size);
+
+		return new Result(true,StatusCode.OK,"查询成功",new PageResult<User>(allFans.getTotalElements(),allFans.getContent()));
+	}
+
+	/**
+	 * 查询我关注的人
+	 * /user/follow/myfollow
+	 * 查询我的关注
+	 */
+	@RequestMapping(value = "/follow/myfollow/{userid}/{page}/{size}",method = RequestMethod.GET)
+	public Result findFollow(@PathVariable String userid,@PathVariable int page,@PathVariable int size){
+		Page<User> follows = userService.findFollows(userid, page, size);
+
+		return new Result(true,StatusCode.OK,"查询成功",new PageResult<User>(follows.getTotalElements(),follows.getContent()));
+	}
+
 
 	/**
 	 * 查询全部数据
