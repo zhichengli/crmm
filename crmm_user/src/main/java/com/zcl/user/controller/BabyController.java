@@ -39,7 +39,18 @@ public class BabyController {
 	public Result findAll(){
 		return new Result(true,StatusCode.OK,"查询成功",babyService.findAll());
 	}
-	
+
+	/**
+	 * 查询全部数据
+	 * @return
+	 */
+	@RequestMapping(value = "/userbaby/{userid}",method= RequestMethod.GET)
+	public Result findAllByUserId(@PathVariable String userid){
+		List<Baby> babies = babyService.findAllByUserId(userid);
+		return new Result(true,StatusCode.OK,"查询成功",babies);
+	}
+
+
 	/**
 	 * 根据ID查询
 	 * @param id ID

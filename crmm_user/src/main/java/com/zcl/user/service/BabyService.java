@@ -154,4 +154,7 @@ public class BabyService {
 
 	}
 
+	public List<Baby> findAllByUserId(String userid) {
+		return babyDao.findAllByUserid(userid);
+	}
 }
