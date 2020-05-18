@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.Query;
  */
 public interface UserDao extends JpaRepository<User,String>,JpaSpecificationExecutor<User>{
 
-    public User findByLoginname(String loginname);
+    public User findByMobile(String mobile);
 
     @Modifying
     @Query(value = "update tb_user set fanscount=fanscount+? where id=?",nativeQuery = true)

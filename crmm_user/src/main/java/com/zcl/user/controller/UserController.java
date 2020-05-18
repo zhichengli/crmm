@@ -71,6 +71,10 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/sendsms/{mobile}",method = RequestMethod.POST)
 	public Result sendSms(@PathVariable String mobile){
+		User user = userService.findByMobile(mobile);
+		if(user != null){
+			return new Result(false,StatusCode.ERROR,"手机号已被使用");
+		}
 		userService.sendSms(mobile);
 		return new Result(true,StatusCode.OK,"短信验证码发送成功");
 	}
@@ -83,7 +87,7 @@ public class UserController {
 	public Result regist(@PathVariable String code,
 						 @RequestBody User user){
 		//得到缓存中的验证码
-		String checkcodeRedis = (String) redisTemplate.opsForValue().get("checkcode_" + user.getLoginname());
+		String checkcodeRedis = (String) redisTemplate.opsForValue().get("checkcode_" + user.getMobile());
 		if(StringUtils.isEmpty(checkcodeRedis)){
 			return new Result(false,StatusCode.ERROR,"请先获取手机验证码");
 		}
@@ -92,7 +96,7 @@ public class UserController {
 			return new Result(false,StatusCode.ERROR,"请输入正确的验证码");
 		}
 		userService.add(user);
-		redisTemplate.delete("checkcode_" + user.getLoginname());
+		redisTemplate.delete("checkcode_" + user.getMobile());
 		return new Result(true,StatusCode.OK,"注册成功");
 	}
 
@@ -196,5 +200,9 @@ public class UserController {
 		userService.deleteById(id);
 		return new Result(true,StatusCode.OK,"删除成功");
 	}
-	
+
+
+	/**
+	 * 添加
+	 */
 }

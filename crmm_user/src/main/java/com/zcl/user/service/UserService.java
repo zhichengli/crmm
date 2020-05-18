@@ -218,9 +218,9 @@ public class UserService {
 
 	public User login(User user) {
 		//根据 用户名查询是否有用户
-		String loginname = user.getLoginname();
+		String mobile = user.getMobile();
 		String password = user.getPassword();
-		User userLogin = userDao.findByLoginname(loginname);
+		User userLogin = userDao.findByMobile(mobile);
 		if(userLogin != null && encoder.matches(password,userLogin.getPassword())){
 			return userLogin;
 		}
@@ -239,6 +239,10 @@ public class UserService {
 
 	public Page<User> findFollows(String userid, int page, int size) {
 		return userDao.findFollows(userid,PageRequest.of(page-1,size));
+	}
+
+	public User findByMobile(String mobile) {
+		return userDao.findByMobile(mobile);
 	}
 }
 

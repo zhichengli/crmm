@@ -18,7 +18,6 @@ public class User implements Serializable{
 
 
 	private String mobile;//手机号码
-	private String loginname;//手机登录名
 	private String password;//密码
 	private String nickname;//昵称
 	private String sex;//性别
@@ -49,12 +48,6 @@ public class User implements Serializable{
 		this.id = id;
 	}
 
-	public String getLoginname() {		
-		return loginname;
-	}
-	public void setLoginname(String loginname) {
-		this.loginname = loginname;
-	}
 
 	public String getPassword() {		
 		return password;
